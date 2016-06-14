@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+INI_READ_SIGNED	ini.c	/^# define INI_READ_SIGNED(/;"	d	file:
+INI_READ_UNSIGNED	ini.c	/^# define INI_READ_UNSIGNED(/;"	d	file:
+_GNU_SOURCE	ini.c	/^# define _GNU_SOURCE$/;"	d	file:
+_GNU_SOURCE	ini.c	/^# undef  _GNU_SOURCE$/;"	d	file:
+_getline	ini.c	/^static ssize_t _getline(char **lineptr, size_t *n, FILE *stream)$/;"	f	file:
+args	ini.h	/^    struct ini_arg *args;$/;"	m	struct:ini_section	typeref:struct:ini_section::ini_arg
+create_arg	ini.c	/^static struct ini_arg *create_arg(struct ini_section *head, char *name, char *value)$/;"	f	file:
+create_section	ini.c	/^static struct ini_section *create_section(struct ini_section *head, char *name)$/;"	f	file:
+find_arg	ini.c	/^static struct ini_arg *find_arg(struct ini_section *curr, char *name)$/;"	f	file:
+find_section	ini.c	/^static struct ini_section *find_section(struct ini_section *head, char *name)$/;"	f	file:
+ini_arg	ini.h	/^struct ini_arg$/;"	s
+ini_free	ini.c	/^void ini_free(ini_t *handler)$/;"	f
+ini_itoa	ini.c	/^char *ini_itoa(int in, char *dst, int radix) $/;"	f
+ini_load	ini.c	/^ini_t *ini_load(char *path)$/;"	f
+ini_print	ini.c	/^static void ini_print(ini_t *handler)$/;"	f	file:
+ini_read_bool	ini.c	/^int ini_read_bool(ini_t *handler,$/;"	f
+ini_read_double	ini.c	/^int ini_read_double(ini_t *handler,$/;"	f
+ini_read_float	ini.c	/^int ini_read_float(ini_t *handler,$/;"	f
+ini_read_int	ini.c	/^int ini_read_int(ini_t *handler,$/;"	f
+ini_read_int16	ini.c	/^int ini_read_int16(ini_t *handler,$/;"	f
+ini_read_int32	ini.c	/^int ini_read_int32(ini_t *handler,$/;"	f
+ini_read_int64	ini.c	/^int ini_read_int64(ini_t *handler,$/;"	f
+ini_read_int8	ini.c	/^int ini_read_int8(ini_t *handler,$/;"	f
+ini_read_ipv4_addr	ini.c	/^int ini_read_ipv4_addr(ini_t *handler,$/;"	f
+ini_read_num	ini.c	/^static int ini_read_num(ini_t *handler,$/;"	f	file:
+ini_read_str	ini.c	/^int ini_read_str(ini_t *handler,$/;"	f
+ini_read_strn	ini.c	/^int ini_read_strn(ini_t *handler,$/;"	f
+ini_read_uint16	ini.c	/^int ini_read_uint16(ini_t *handler,$/;"	f
+ini_read_uint32	ini.c	/^int ini_read_uint32(ini_t *handler,$/;"	f
+ini_read_uint64	ini.c	/^int ini_read_uint64(ini_t *handler,$/;"	f
+ini_read_uint8	ini.c	/^int ini_read_uint8(ini_t *handler,$/;"	f
+ini_read_unsigned	ini.c	/^int ini_read_unsigned(ini_t *handler,$/;"	f
+ini_section	ini.h	/^struct ini_section$/;"	s
+ini_t	ini.h	/^typedef struct ini_section ini_t;$/;"	t	typeref:struct:ini_section
+is_comment	ini.c	/^static bool is_comment(char **line)$/;"	f	file:
+main	test.c	/^int main()$/;"	f
+name	ini.h	/^    char  *name;$/;"	m	struct:ini_arg
+name	ini.h	/^    char  *name;$/;"	m	struct:ini_section
+next	ini.h	/^    struct ini_arg *next;$/;"	m	struct:ini_arg	typeref:struct:ini_arg::ini_arg
+next	ini.h	/^    struct ini_section *next;$/;"	m	struct:ini_section	typeref:struct:ini_section::ini_section
+sstrncpy	ini.c	/^static char *sstrncpy(char *dest, const char *src, size_t n)$/;"	f	file:
+value	ini.h	/^    char  *value;$/;"	m	struct:ini_arg

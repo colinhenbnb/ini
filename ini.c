@@ -661,3 +661,24 @@ int ini_read_bool(ini_t *handler,
     return ret;
 }
 
+char *ini_itoa(int in, char *dst, int radix) 
+{
+    int src = in;
+    int num = 0;
+    int i = 0;
+    char tmp[100];
+
+    do{
+        num = src%10;
+        tmp[i++] = num+'0';
+        src = src/10;
+    }while(src>0);
+
+    tmp[i] = '\0';
+    int len = strlen(tmp);
+    for (i = 0; i <len;i++) {
+        dst[i] = tmp[len-i-1];
+    }
+    dst[i] = '\0';
+    return dst;
+}

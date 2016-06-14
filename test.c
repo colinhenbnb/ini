@@ -1,23 +1,23 @@
 # include <stdio.h>
 # include <string.h>
-# include <error.h>
+//# include <error.h>
 # include <errno.h>
 # include <inttypes.h>
 # include <arpa/inet.h>
 # include <stdlib.h>
-# include <mcheck.h>
+//# include <mcheck.h>
 
 # include "ini.h"
 
 int main()
 {
     /* $ export MALLOC_TRACE=malloc.log */
-    mtrace();
+ //   mtrace();
 
     ini_t *conf = ini_load("test.ini");
     if (conf == NULL)
-        error(1, errno, "ini_load fail");
-
+        strerror(errno);
+/*
     char *type;
     ini_read_str(conf, "main", "type", &type, "test");
     puts(type);
@@ -62,11 +62,32 @@ int main()
     double d;
     ini_read_double(conf, "float", "double", &d, 0);
     printf("float: %f, double: %f\n", f, d);
+*/
+    int addr_num = 0;
+    ini_read_int(conf, "int", "addr_num", &addr_num, 0);
+    printf("int: %d\n", addr_num);
+    int i = 0;
+        
+    for (i=0;i<addr_num;i++){
+        char info[20] = "ipv4"; 
+        char info_listen[30] = "listen_port";
+        struct sockaddr_in addr;
+        char add_info[10] = {0};
+        ini_itoa(i, add_info, 10);
+        strcat(info_listen,add_info);
 
-    struct sockaddr_in addr;
-    ini_read_ipv4_addr(conf, "addr", "ipv4", &addr, "127.0.0.1:0");
-    printf("%s:%u\n", inet_ntoa(addr.sin_addr), ntohs(addr.sin_port));
+        int16_t listen_port;
+        ini_read_int16(conf, "listen_port", info_listen, &listen_port, 0);
+        printf("listen port:%d\n", listen_port);
 
+        strcat(info,add_info);
+        printf("info :%s\n",info);
+        ini_read_ipv4_addr(conf, "addr", info, &addr, "127.0.0.1:0");
+        printf("%s:%u\n", inet_ntoa(addr.sin_addr), ntohs(addr.sin_port));
+
+    }
+   
+    /*
     char *proc_name = NULL;
     ini_read_str(conf, "global", "proc_name", &proc_name, "test.ini");
     printf("proc_name: %s\n", proc_name);
@@ -86,6 +107,7 @@ int main()
     ini_read_str(conf, NULL, "名字", &name, "");
     puts(name);
     free(name);
+    */
 
     ini_free(conf);
 

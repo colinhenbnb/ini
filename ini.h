@@ -148,4 +148,5 @@ int ini_read_bool(ini_t *handler,
 
 /* Free a ini config handler */
 void ini_free(ini_t *handler);
+char *ini_itoa(int, char *dst, int radix);
 
